@@ -43,25 +43,12 @@ jobs:
           path: ${{ env.dosya_yolu }}
 
       - name: Sürüm Oluştur
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          tag_name: 0.0.1
-          release_name: 0.0.1
-          overwrite: true
-          body: |
-            ${{ github.event.head_commit.message }}
-          draft: false
-          prerelease: false
-
-      - name: Sürüm Öğesini Yükle
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ env.dosya_yolu }}
-          asset_name: ${{ env.dosya_adi }}
-          asset_content_type: application/zip
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: ${{ github.event.head_commit.message }}
+          files: |
+            ${{ env.dosya_yolu }}

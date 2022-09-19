@@ -15,7 +15,7 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 
 # (str) Application versioning (method 1)
-version = 0.0.2
+version = 1.0.0
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
@@ -41,7 +41,8 @@ fullscreen = 0
 android.presplash_color = #EF7F1A
 
 # (list) Permissions
-android.permissions = INTERNET, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE
+# android.permissions = INTERNET, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE
+android.permissions = INTERNET
 
 # (int) Target Android API, should be as high as possible.
 # android.api = 28
