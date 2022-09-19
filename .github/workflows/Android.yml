@@ -43,11 +43,9 @@ jobs:
           path: ${{ env.dosya_yolu }}
 
       - name: Sürüm Oluştur
-      
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
-          title: ${{ github.event.head_commit.message }}
           files: |
             ${{ env.dosya_yolu }}
