@@ -33,8 +33,8 @@ jobs:
           dosya_adi=$(basename $dosya_yolu)
           echo dosya_yolu=${dosya_yolu} >> $GITHUB_ENV
           echo dosya_adi=${dosya_adi} >> $GITHUB_ENV
-          echo "Dosya Yolu » ${{ env.dosya_yolu }}"
-          echo "Dosya Adı  » ${{ env.dosya_adi }}"
+          echo "Dosya Yolu »" ${{ env.dosya_yolu }}
+          echo "Dosya Adı  »" ${{ env.dosya_adi }}
 
       - name: Yapıları Yükle
         uses: actions/upload-artifact@v2

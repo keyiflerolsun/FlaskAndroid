@@ -1,13 +1,12 @@
 [app]
-
 # (str) Title of your application
-title = Pinterest
+title = Heptagon
 
 # (str) Package name
-package.name = pinterest
+package.name = Heptagon
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.pinterest
+package.domain = org.hptgn
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -16,21 +15,20 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,atlas
 
 # (str) Application versioning (method 1)
-version = 0.0.1
+version = 0.0.2
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
 requirements = python3,flask
 
 # (str) Presplash of the application
-presplash.filename = %(source.dir)s/assets/logo.jpg
+presplash.filename = %(source.dir)s/assets/favicon.png
 
 # (str) Icon of the application
-icon.filename = %(source.dir)s/assets/logo.jpg
+icon.filename = %(source.dir)s/assets/favicon.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
-#
 
 # (bool) Indicate if the application should be fullscreen or not
 fullscreen = 0
@@ -54,17 +52,16 @@ android.permissions = INTERNET, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE
 # (bool) If True, then skip trying to update the Android sdk
 # This can be useful to avoid excess Internet downloads or save time
 # when an update is due and you just want to test/build your package
-# android.skip_update = True
+android.skip_update = True
 
 # (str) Android logcat filters to use
-# android.logcat_filters = *:S python:D
+android.logcat_filters = *:S python:D
 
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
 android.arch = arm64-v8a
 
 # (str) python-for-android branch to use, defaults to master
-# p4a.branch = develop
-
+p4a.branch = develop
 
 # (str) Bootstrap to use for android builds
 p4a.bootstrap = webview
@@ -74,7 +71,6 @@ p4a.port = 8080
 
 
 [buildozer]
-
 # (int) Log level (0 = error only, 1 = info, 2 = debug (with command output))
 log_level = 1
 

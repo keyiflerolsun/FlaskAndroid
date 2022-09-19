@@ -5,11 +5,9 @@ request_permissions([Permission.READ_EXTERNAL_STORAGE, Permission.WRITE_EXTERNAL
 
 app = Flask(__name__)
 
-
-@app.route('/')
+@app.route("/")
 def index():
-    return redirect('https://www.pinterest.com')
-
+    return redirect("https://hptgn.io/")
 
 if __name__ == "__main__":
     app.run(debug=False, port=8080)
