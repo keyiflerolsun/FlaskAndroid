@@ -14,6 +14,7 @@ jobs:
           echo "${{toJSON(github.event)}}"
 
   AndroidDerleyici:
+    name: KekikAkademi Android Derleyici
     runs-on: ubuntu-latest
 
     steps:
@@ -36,16 +37,17 @@ jobs:
           echo "Dosya Yolu »" ${{ env.dosya_yolu }}
           echo "Dosya Adı  »" ${{ env.dosya_adi }}
 
-      - name: Yapıları Yükle
+      - name: Eseri Yükle
         uses: actions/upload-artifact@v2
         with:
           name: ${{ env.dosya_adi }}
           path: ${{ env.dosya_yolu }}
 
-      - name: Sürüm Oluştur
-        uses: "marvinpinto/action-automatic-releases@latest"
+      - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
+          prerelease: false
+          title: ${{ github.event.head_commit.message }}
           files: |
             ${{ env.dosya_yolu }}
