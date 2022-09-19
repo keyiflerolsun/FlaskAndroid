@@ -2,14 +2,8 @@
 
 name: KekikAkademi Android Derleyici
 
-on:
-  push:
-    branches:
-      - "master"
+on: [push, pull_request]
 
-  pull_request:
-    branches:
-      - "master"
 jobs:
   GithubLog:
     name: "GitHub Etkinliğindeki Her Şeyin LOG'u"
@@ -24,7 +18,7 @@ jobs:
 
     steps:
       - name: Depo Kontrolü
-        uses: actions/checkout@v2
+        uses: actions/checkout@v1
 
       - name: Buildozer ile Derle
         uses: ArtemSBulgakov/buildozer-action@v1.1.3
