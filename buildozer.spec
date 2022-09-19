@@ -55,13 +55,13 @@ android.permissions = INTERNET, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE
 android.skip_update = True
 
 # (str) Android logcat filters to use
-android.logcat_filters = *:S python:D
+# android.logcat_filters = *:S python:D
 
 # (str) The Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
 android.arch = arm64-v8a
 
 # (str) python-for-android branch to use, defaults to master
-p4a.branch = develop
+# p4a.branch = develop
 
 # (str) Bootstrap to use for android builds
 p4a.bootstrap = webview
