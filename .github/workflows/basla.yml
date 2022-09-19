@@ -1,0 +1,26 @@
+# Bu araç @keyiflerolsun tarafından | @KekikAkademi için yazılmıştır.
+
+name: KekikAkademi Android Derleyici
+
+on: [push, pull_request]
+
+jobs:
+  AndroidDerleyici:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Depo Kontrolü
+        uses: actions/checkout@v2
+
+      - name: Buildozer ile Derle
+        uses: ArtemSBulgakov/buildozer-action@v1
+        id: buildozer
+        with:
+          workdir: test_app
+          buildozer_version: stable
+
+      - name: Yapıları Yükle
+        uses: actions/upload-artifact@v2
+        with:
+          name: package
+          path: ${{ steps.buildozer.outputs.filename }}
