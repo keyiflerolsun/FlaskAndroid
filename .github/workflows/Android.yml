@@ -2,8 +2,14 @@
 
 name: KekikAkademi Android Derleyici
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - "master"
 
+  pull_request:
+    branches:
+      - "master"
 jobs:
   GithubLog:
     name: "GitHub Etkinliğindeki Her Şeyin LOG'u"
@@ -48,7 +54,6 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
-          prerelease: true
           title: ${{ github.event.head_commit.message }}
           files: |
             ${{ env.dosya_yolu }}
